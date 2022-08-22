@@ -1,0 +1,1 @@
+This project is still in progress. I do plan adding more features aside from the basic need, and possibly creating a skeleton code to create multiple different personas for the bot. Currently, the persona is set to Paimon from the game Genshin Impact.
