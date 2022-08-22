@@ -15,7 +15,7 @@ class aclient(discord.Client):
     async def on_ready(self):
         await self.wait_until_ready()
         if not self.synced:
-            await tree.sync(guild = discord.Object(id = 818227391670911096))
+            await tree.sync(guild = discord.Object(id = "REDACTED"))
             self.synced = True
         print(f"We have logged in as {self.user}.")
         
@@ -24,7 +24,7 @@ client = aclient()
 tree = app_commands.CommandTree(client)
 
 # All Commands
-@tree.command(name = "spiral", description = "Paimon will tell you how many days are left until Spiral Abyss resets!", guild = discord.Object(id = 818227391670911096))
+@tree.command(name = "spiral", description = "Paimon will tell you how many days are left until Spiral Abyss resets!", guild = discord.Object(id = "REDACTED"))
 async def self(interaction: discord.Interaction, name: str):
     await interaction.response.send_message(f"Hello {name}! \n\n" + prompt.spiral())
 
@@ -46,11 +46,11 @@ async def on_guild_join(guild):
 @client.event
 async def on_ready():
     # General Chat Message when bot turns on.
-    channel = client.get_channel(1001671131482312705)
+    channel = client.get_channel("REDACTED")
     # await channel.send(prompt.startup())
 
     # Channel for reminders.
-    channel = client.get_channel(1001671131482312705)
+    channel = client.get_channel("REDACTED")
 
     # Daily Reminder
     if remind[0]:
@@ -88,7 +88,7 @@ async def on_message(message):
             temp = temp[10:]
             data.eventAdd(temp)
             await message.channel.send("Paimon just added " + temp + " to the event list!")
-            channel = client.get_channel(818958387160023041)
+            channel = client.get_channel("REDACTED")
             await channel.send("@here\n\nPaimon has just added " + temp + " to the reminders list! You will now see it in the event list on the next reminder!")
 
     if message.content.startswith('$eventDelete'):
@@ -105,7 +105,7 @@ async def on_message(message):
             temp = temp[index]
             data.eventDelete(index)
             await message.channel.send("Paimon just deleted " + temp[:-1] + " to the event list!")
-            channel = client.get_channel(818958387160023041)
+            channel = client.get_channel("REDACTED")
             await channel.send("@here\n\nPaimon has just removed " + temp[:-1] + " from the reminders list!")
 
     if "emergency food" in message.content.lower():
