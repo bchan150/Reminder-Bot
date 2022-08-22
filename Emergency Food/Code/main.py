@@ -54,7 +54,7 @@ async def daily():
     
     # CHANNEL FOR REMINDERS
     # Copy and paste the channel ID in the next line for the dedicated reminders.
-    channel_id = 1001671131482312705
+    channel_id = "REDACTED"
     channel = client.get_channel(channel_id)
 
     # Code to send messages.
