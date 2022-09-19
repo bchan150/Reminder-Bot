@@ -60,7 +60,7 @@ async def daily():
     # Code to send messages.
     await channel.send(prompt.startup())
 
-    if remind:
+    if check:
         await channel.send(prompt.daily())
         if time.localtime(time.time()).tm_wday == 6:
             await channel.send(prompt.beforeWeek())
